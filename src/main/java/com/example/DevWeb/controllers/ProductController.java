@@ -17,12 +17,14 @@ import java.util.UUID;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+
 @RestController
 public class ProductController {
 
     @Autowired
     ProductRepository productRepository;
 
+    private static final String PROD_NOT_FOUND = "Product not found";
     @PostMapping("/products")
     public ResponseEntity<ProductModel> saveProduct(@RequestBody @Valid ProductRecordDto productRecordDto){
         var productModel = new ProductModel();
@@ -46,7 +48,7 @@ public class ProductController {
     public ResponseEntity<Object> getOneProduct(@PathVariable(value="id") UUID id){
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(PROD_NOT_FOUND);
         }
         product0.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel("Products List"));
         return ResponseEntity.status(HttpStatus.OK).body(product0.get());
@@ -56,7 +58,7 @@ public class ProductController {
     public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductRecordDto productRecordDto) {
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(PROD_NOT_FOUND);
         }
         var productModel = product0.get();
         BeanUtils.copyProperties(productRecordDto, productModel);
@@ -67,7 +69,7 @@ public class ProductController {
     public ResponseEntity<Object> deleteProduct(@PathVariable(value = "id") UUID id) {
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(PROD_NOT_FOUND);
         }
         productRepository.delete(product0.get());
         return ResponseEntity.status((HttpStatus.OK)).body("Product deleted successfully");
