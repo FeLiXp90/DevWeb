@@ -1,4 +1,4 @@
-package com.example.DevWeb.dtos;
+package com.example.devweb.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

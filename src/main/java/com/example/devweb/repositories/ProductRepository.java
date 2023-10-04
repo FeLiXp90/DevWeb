@@ -1,6 +1,6 @@
-package com.example.DevWeb.repositories;
+package com.example.devweb.repositories;
 
-import com.example.DevWeb.models.ProductModel;
+import com.example.devweb.models.ProductModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

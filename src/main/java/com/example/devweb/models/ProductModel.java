@@ -1,4 +1,4 @@
-package com.example.DevWeb.models;
+package com.example.devweb.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

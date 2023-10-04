@@ -1,8 +1,8 @@
-package com.example.DevWeb.controllers;
+package com.example.devweb.controllers;
 
-import com.example.DevWeb.dtos.ProductRecordDto;
-import com.example.DevWeb.models.ProductModel;
-import com.example.DevWeb.repositories.ProductRepository;
+import com.example.devweb.dtos.ProductRecordDto;
+import com.example.devweb.models.ProductModel;
+import com.example.devweb.repositories.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +50,7 @@ public class ProductController {
         if(product0.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(PROD_NOT_FOUND);
         }
-        product0.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel("Products List"));
+        product0.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel();
         return ResponseEntity.status(HttpStatus.OK).body(product0.get());
     }
 
