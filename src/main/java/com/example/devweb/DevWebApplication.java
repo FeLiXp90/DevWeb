@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class devWebApplication {
+public class DevWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(devWebApplication.class, args);
+		SpringApplication.run(DevWebApplication.class, args);
 	}
 
 	@GetMapping("/")

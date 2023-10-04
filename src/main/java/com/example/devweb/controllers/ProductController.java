@@ -50,7 +50,7 @@ public class ProductController {
         if(product0.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(PROD_NOT_FOUND);
         }
-        product0.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel();
+        product0.get().add(linkTo(methodOn(ProductController.class).getAllProducts()).withSelfRel());
         return ResponseEntity.status(HttpStatus.OK).body(product0.get());
     }
 
