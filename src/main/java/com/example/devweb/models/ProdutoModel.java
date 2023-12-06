@@ -13,27 +13,27 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@Table(name = "TB_PRODUCTS")
-public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
+@Table(name = "TB_PRODUTOS")
+public class ProdutoModel extends RepresentationModel<ProdutoModel> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private UUID idProduct;
-    private String name;
+    private UUID idProduto;
+    private String nome;
     private BigDecimal valor;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductModel that = (ProductModel) o;
-        return Objects.equals(idProduct, that.idProduct);
+        ProdutoModel that = (ProdutoModel) o;
+        return Objects.equals(idProduto, that.idProduto);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idProduct);
+        return Objects.hash(idProduto);
     }
 
 }
