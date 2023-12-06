@@ -6,11 +6,13 @@ import com.example.devweb.models.UsuarioModel;
 
 import com.example.devweb.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Component
 public class UsuarioService extends EnderecoService{
 
     @Autowired

@@ -12,7 +12,7 @@
 	<artifactId>DevWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DevWeb</name>
-	<description>Aprendendo a mexer com springboot</description>
+	<description>Exercicio2</description>
 	<properties>
 		<sonar.organization>felixp90</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -23,6 +23,11 @@
 		</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

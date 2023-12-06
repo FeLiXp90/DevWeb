@@ -4,11 +4,13 @@ import com.example.devweb.dtos.EnderecoDto;
 import com.example.devweb.models.EnderecoModel;
 import com.example.devweb.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Component
 public class EnderecoService {
 
     @Autowired
@@ -55,7 +57,7 @@ public class EnderecoService {
         return null;
     }
 
-    public void deleteUser(UUID id) {
+    public void deleteEnd(UUID id) {
         enderecoRepository.deleteById(id);
     }
 }
