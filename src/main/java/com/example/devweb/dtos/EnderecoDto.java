@@ -10,12 +10,17 @@ public class EnderecoDto {
 
     @NotBlank
     private String logradouro;
+
     @NotBlank
     private String bairro;
+
     @NotBlank
     private String cidade;
+
     @NotBlank
     private String estado;
+
     @NotBlank
     private String numero;
+
 }
