@@ -15,7 +15,7 @@ public class DevWebApplication {
 
 	@GetMapping("/")
 	public String index(){
-		return "Olá Mundo!";
+		return "http://localhost:8080/swagger-ui/index.html#/";
 	}
 
 }
